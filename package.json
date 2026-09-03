@@ -1,0 +1,16 @@
+{
+  "name": "pvp-tierlist-bot",
+  "version": "1.0.0",
+  "description": "Discord PvP tierlist queue and ranking bot",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.27.0",
+    "express": "^4.22.2"
+  }
+}

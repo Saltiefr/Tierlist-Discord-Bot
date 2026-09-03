@@ -1,0 +1,10 @@
+# Dependencies (too large to commit)
+node_modules/
+
+# Sensitive credentials (never push these to GitHub)
+config.json
+.env
+
+# System files
+.DS_Store
+Thumbs.db

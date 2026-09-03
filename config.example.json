@@ -1,0 +1,48 @@
+{
+  "token": "YOUR_DISCORD_BOT_TOKEN_HERE",
+  "resultsChannelID": "REPLACE_WITH_RESULTS_CHANNEL_ID",
+  "waitlistCategoryID": "REPLACE_WITH_WAITLIST_CATEGORY_ID",
+  "adminRoleID": "",
+  "gamemodes": {
+    "crystal": {
+      "waitlistRoleID": "REPLACE_ME",
+      "testerRoleID": "REPLACE_ME",
+      "queueChannelID": "REPLACE_ME"
+    },
+    "sword": {
+      "waitlistRoleID": "REPLACE_ME",
+      "testerRoleID": "REPLACE_ME",
+      "queueChannelID": "REPLACE_ME"
+    },
+    "axe": {
+      "waitlistRoleID": "REPLACE_ME",
+      "testerRoleID": "REPLACE_ME",
+      "queueChannelID": "REPLACE_ME"
+    },
+    "nethpot": {
+      "waitlistRoleID": "REPLACE_ME",
+      "testerRoleID": "REPLACE_ME",
+      "queueChannelID": "REPLACE_ME"
+    },
+    "diamondpot": {
+      "waitlistRoleID": "REPLACE_ME",
+      "testerRoleID": "REPLACE_ME",
+      "queueChannelID": "REPLACE_ME"
+    },
+    "mace": {
+      "waitlistRoleID": "REPLACE_ME",
+      "testerRoleID": "REPLACE_ME",
+      "queueChannelID": "REPLACE_ME"
+    },
+    "uhc": {
+      "waitlistRoleID": "REPLACE_ME",
+      "testerRoleID": "REPLACE_ME",
+      "queueChannelID": "REPLACE_ME"
+    },
+    "smp": {
+      "waitlistRoleID": "REPLACE_ME",
+      "testerRoleID": "REPLACE_ME",
+      "queueChannelID": "REPLACE_ME"
+    }
+  }
+}
