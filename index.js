@@ -33,7 +33,12 @@ app.listen(PORT, () => {
 });
 
 // Load config
-const config = JSON.parse(fs.readFileSync("config.json", "utf-8"));
+// Render mounts Secret Files at /etc/secrets/<filename>, so check there first,
+// then fall back to a local config.json for other environments.
+const configPath = fs.existsSync("/etc/secrets/config.json")
+	? "/etc/secrets/config.json"
+	: "config.json";
+const config = JSON.parse(fs.readFileSync(configPath, "utf-8"));
 
 const bot = new Client({
 	intents: [GatewayIntentBits.Guilds]
