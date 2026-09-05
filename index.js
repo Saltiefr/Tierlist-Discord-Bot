@@ -28,6 +28,37 @@ app.get("/", (req, res) => {
 	res.status(200).send("PvP Tierlist Bot is running!");
 });
 
+// ADD THE NEW ROUTE HERE:
+app.get("/debug", async (req, res) => {
+	const results = {};
+
+	results.nodeVersion = process.version;
+
+	try {
+		results.discordJsVersion = require("discord.js/package.json").version;
+	} catch (e) {
+		results.discordJsVersion = "error: " + e.message;
+	}
+
+	try {
+		const start = Date.now();
+		const controller = new AbortController();
+		const timeout = setTimeout(() => controller.abort(), 8000);
+		const response = await fetch("https://discord.com/api/v10/gateway", {
+			signal: controller.signal
+		});
+		clearTimeout(timeout);
+		results.gatewayFetch = {
+			status: response.status,
+			ms: Date.now() - start
+		};
+	} catch (e) {
+		results.gatewayFetch = "FAILED: " + e.message;
+	}
+
+	res.json(results);
+});
+
 app.listen(PORT, () => {
 	console.log(`HTTP Health Server listening on port ${PORT}`);
 });
