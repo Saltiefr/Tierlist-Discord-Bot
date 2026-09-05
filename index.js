@@ -644,4 +644,14 @@ async function handleCommand(interaction) {
 
 // Token environment variable takes priority, otherwise falls back to config.json
 const botToken = process.env.DISCORD_TOKEN || config.token;
-bot.login(botToken);
+bot.login(botToken).catch((err) => {
+	console.error("FATAL: bot.login() failed:", err);
+	process.exit(1);
+});
+
+process.on("unhandledRejection", (reason) => {
+	console.error("UNHANDLED REJECTION:", reason);
+});
+process.on("uncaughtException", (err) => {
+	console.error("UNCAUGHT EXCEPTION:", err);
+});
