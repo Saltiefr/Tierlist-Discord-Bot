@@ -644,10 +644,18 @@ async function handleCommand(interaction) {
 
 // Token environment variable takes priority, otherwise falls back to config.json
 const botToken = process.env.DISCORD_TOKEN || config.token;
+console.log("Attempting Discord login...");
+
 bot.login(botToken).catch((err) => {
 	console.error("FATAL: bot.login() failed:", err);
 	process.exit(1);
 });
+
+setTimeout(() => {
+	if (!bot.isReady()) {
+		console.error("STILL NOT READY after 20s — login is hanging, not rejecting.");
+	}
+}, 20000);
 
 process.on("unhandledRejection", (reason) => {
 	console.error("UNHANDLED REJECTION:", reason);
